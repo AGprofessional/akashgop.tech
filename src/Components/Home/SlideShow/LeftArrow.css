@@ -1,0 +1,8 @@
+.lftarrow {
+  border: 0px solid black;
+  cursor: pointer;
+}
+
+.lftarrow img:hover {
+  box-shadow: 0 4px 2px -2px blue;
+}

@@ -1,6 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import meIcon from "../pictures/meIcon.png"
+import About from "../About"
+import Resume from "../Resume"
+import Home from "../Home/Home"
+import meIcon from "../../pictures/meIcon.png"
 import "./Navbar.css"
 import {
   BrowserRouter,
@@ -8,14 +11,14 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Toggle from './Toggle';
 
+import Lights from "./DimLights/Lights" 
 
 const NavContainer = styled.nav`
 display:flex;
 flex-direction:row;
 justify-content: space-between;
-width:100%;
+width:100vw;
 padding:0;
 margin:0;
 border: 1px solid transparent;
@@ -67,10 +70,11 @@ margin:0;
 
 
 const SwitchContainer = styled(Container)`
-background: white;
-height: 100vh;
-width: 100%;
+background: #f8f8ff;
+
+margin-top:70px;
 `
+
 const Name = styled.div`
 font-family: 'Arizonia', cursive;
 text-align: center;  
@@ -114,12 +118,9 @@ export default function Navbar() {
             <Name>
                 Akash Gopalkrishnan
             </Name>
-
             <LinksContainer>
                    
                     <LinkItem>
-
-                    
                        <Link to="/about" className="Link"><div>About</div></Link>
                     </LinkItem>
                     <LinkItem>
@@ -129,9 +130,7 @@ export default function Navbar() {
             </LinksContainer>
             </NavContainer> 
             <ToggleContainer>
-                <span id="toggle-text">Dim the lights</span>
-               <Toggle/>
-               
+                <Lights/>
             </ToggleContainer>
            
 
@@ -139,7 +138,7 @@ export default function Navbar() {
                  <Switch>
                    
                   <Route path="/about">
-                     <About />
+                     <About/>
                  </Route>
                  <Route path="/resume">
                      <Resume />
@@ -157,44 +156,4 @@ export default function Navbar() {
     )
 }
 
-const AboutC = styled.div`
-backround-color: gray;
-color:blue;
-`
-
-const ResumeC = styled(AboutC)``
-
-function About() {
- return(<AboutC>
-     about
- </AboutC>)
-}
-
-function Resume() {
-    return(<ResumeC>resume</ResumeC>)
- 
-}
-
-const HomeC = styled(ResumeC)`
-display:flex;
-flex-direction:row;
-justify-content:center;
-
-`
-const Carousel = styled.div`
-
-height: 400px;
-width:400px;
-border: 1px solid black;
-color:black;
-text-align:center;
-align
-`
-
-function Home() {
-    return(<HomeC><Carousel>
-        projects
-        </Carousel></HomeC>)
- 
-}
 

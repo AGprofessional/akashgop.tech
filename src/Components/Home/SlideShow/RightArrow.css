@@ -1,0 +1,8 @@
+.rtarrow {
+  border: 0px solid black;
+  cursor: pointer;
+}
+
+.rtarrow img:hover {
+  box-shadow: 0 4px 2px -2px blue;
+}
