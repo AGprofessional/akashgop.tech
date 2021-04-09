@@ -77,21 +77,24 @@ margin-top:70px;
 `
 
 const Name = styled.div`
-font-family: 'Arizonia', cursive;
+font-family: 'Poiret One', cursive;
 text-align: center;  
 padding: 0px;
 display:inline-block;
-font-size: 64px;
+font-size: 50px;
+padding-top:15px;
 color:white;
 border: 0px solid black;
+ @media (max-width: 1200px) {
+    font-size: 40px;}
  @media (max-width: 1000px) {
-    font-size: 45px;}
+    font-size: 35px;}
 
   @media (max-width:950px){
-        font-size:40px;
+        font-size:30px;
     }
     @media (max-width:700px){
-        font-size:35px;
+        font-size:25px;
     }
     
 `

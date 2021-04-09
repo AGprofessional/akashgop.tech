@@ -179,7 +179,6 @@ render() {
         </Projects>
         <RightSpot>
               <RgtContainer>
-                 
             <button className="arrowBtn" onClick = {this.Decrement}>
                 <img className="rtarrow" src={Rgt} width="50px" height="50px"></img>
             </button>

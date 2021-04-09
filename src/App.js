@@ -59,14 +59,14 @@ function App() {
 <FlexRow>
   <SocialMediaWrapper>
   <Socialmedia>
-      <button className="arrowBtn">
+      <label type="button" className="arrowBtn">
           <img className="rtarrow" src={linkedin} width="25px" height="25px"></img>
-      </button>
+      </label>
       </Socialmedia>
       <Socialmedia>
-      <button className="arrowBtn">
+      <label type="button" className="arrowBtn">
           <img className="rtarrow" src={github} width="25px" height="25px"></img>
-      </button>   
+      </label>   
    </Socialmedia> 
    </SocialMediaWrapper>
 </FlexRow>
