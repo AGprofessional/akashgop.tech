@@ -26,6 +26,7 @@ border-box: 0;
 box-shadow: 0px 3px 30px -6px #000000;
 background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,224,156,1) 0%, rgba(79,226,140,1) 31%, rgba(0,212,255,1) 100%);
+background: black;
 `
 
 
@@ -81,7 +82,7 @@ text-align: center;
 padding: 0px;
 display:inline-block;
 font-size: 64px;
-color:black;
+color:white;
 border: 0px solid black;
  @media (max-width: 1000px) {
     font-size: 45px;}
@@ -101,6 +102,13 @@ flex-direction:row-reverse;
 justify-content:left;
 margin:10px;
 `
+const SectionTitle=styled.h1`
+font-size:37px;
+margin:0;
+text-align:center;
+
+`
+
 
 export default function Navbar() {
     return (
@@ -109,7 +117,7 @@ export default function Navbar() {
         <nav>
             <NavContainer>
             <IconContainer>
-                <a href="http://localhost:3000/">
+                <a href="https://akashgop.tech/">
                 <Img src={meIcon}>
                 </Img>   
                 </a>
@@ -119,32 +127,32 @@ export default function Navbar() {
                 Akash Gopalkrishnan
             </Name>
             <LinksContainer>
-                   
+                  
                     <LinkItem>
                        <Link to="/about" className="Link"><div>About</div></Link>
                     </LinkItem>
                     <LinkItem>
-                        <Link to="/resume" className="Link" ><div>Resume</div> </Link>
+                        <Link to="/videogallery" className="Link" ><div>Video Gallery</div> </Link>
+                    </LinkItem>
+                      <LinkItem>
+                       <Link to="/" className="Link"><div>Project Gallery</div></Link>
                     </LinkItem>
                    
             </LinksContainer>
             </NavContainer> 
-            <ToggleContainer>
-                <Lights/>
-            </ToggleContainer>
+            
            
-
            <SwitchContainer>
                  <Switch>
                    
                   <Route path="/about">
                      <About/>
                  </Route>
-                 <Route path="/resume">
-                     <Resume />
+                 <Route path="/videogallery">
+                     <Home />
                  </Route>
                     <Route path="/">
-                     <Home />
+                     <Resume />
                  </Route>
                  </Switch>
             </SwitchContainer>

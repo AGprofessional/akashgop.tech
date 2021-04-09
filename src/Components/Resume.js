@@ -1,10 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-const ResumeC = styled.div`
-backround-color: gray;
-color:blue;
+const Wrapper  = styled.div`
+height:100vh;
+width:100vw;
+
+border: 0px solid black;
+
 `
 export default function Resume() {
-    return(<ResumeC>resume</ResumeC>)
- 
-}
+ return(
+ <>
+    <Wrapper>
+
+    <h1>Project Gallery Under Construction </h1>
+<h2> Check back soon!</h2>
+    </Wrapper>
+
+
+ </>
+ )}

@@ -10,12 +10,12 @@
   line-height: 30px;
   text-align: center;
   font-size: 20px;
-  color: black;
+  color: whitesmoke;
   cursor: pointer;
 }
 
 .Link div:hover {
-  color: white;
+  text-decoration: underline;
 }
 
 #toggle-text {

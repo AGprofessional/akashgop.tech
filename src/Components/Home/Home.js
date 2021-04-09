@@ -4,6 +4,9 @@ import styled from 'styled-components'
 //import RightArrow from "./SlideShow/RightArrow"
 import "../Home/SlideShow/LeftArrow.css"
 import Lft from "../../pictures/leftarrow.png"
+import linkedin from "../../pictures/linkedin.png"
+import github from "../../pictures/github.png"
+
 import "../Home/SlideShow/RightArrow.css"
 import Rgt from "../../pictures/rightArrow.png"
 import "../Home/Home.css";
@@ -58,10 +61,11 @@ flex-direction:column;
 justify-content:center;
 border: 0px solid black;`
 
-const Title= styled.div`
+const Title= styled.h1`
 margin-bottom:10px;
 font-size:27px;
-text-decoration:bold;`
+text-decoration:bold;
+color: #1d83d4`
 
 const Video = styled.div`
   position: relative;
@@ -70,8 +74,42 @@ const Video = styled.div`
 
 const Main = styled.div`
 border: 0px solid black;
-margin: -30px 100px;`
+margin: 0px 100px;
+margin-top:-30px;
+margin-bottom:30px;`
 //end of styled components
+
+const SectionTitle=styled.h1`
+margin:0;
+font-size:40px;
+
+`
+const Footer = styled.footer`
+display:flex;
+flex-direction:column;
+align-items:center;
+width:100vw;
+height:50px;
+padding:0;
+margin:0;
+border: 0px solid transparent;
+border-box: 0;
+
+background: black;
+`
+
+const iconContainerCol = styled.div`
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+border: 0px solid black;
+margin-top: 25px;
+`
+
+const iconContainerRow = styled(iconContainerCol)`
+flex-direction:row;
+`
 
 const projectArray=[
 {id: "0", title:"HackTCNJ 2021 Winner of Google Cloud Challenge", videoLink:"https://www.youtube-nocookie.com/embed/xsMvJurmF_w?start=2", imageSrc:"", sentence1:"I received 1st place for ‘Best Use of Google Cloud API’ by identifying an opportunity to adopt Google Cloud Platform machine learning, Calendar API, and Firebase to solve a student productivity challenge caused by COVID-19.", sentence2:"Created an adaptive and responsive web and mobile application by implementing React Native, HTML5, and CSS3 for component-based UI design, asynchronous request handling and partial page updates.", sentence3:"Increased read, write, and search time complexity from potentially linear to constant time by transforming an SQL backend design to a horizontally scalable, document-based, NoSQL architecture using Google Cloud Firebase."},
@@ -102,13 +140,16 @@ Decrement = () => {
 
 render() {
     return(
+        <div className="page">
     <Main>
+        <SectionTitle> Video Gallery </SectionTitle>
     <HomeContainer>
         <LeftSpot>
             <LftContainer>
             <button className="arrowBtn" onClick = {this.Decrement}>
                 <img className="lftarrow" src={Lft} width="50px" height="50px"></img>
             </button>
+            <h1>Prev</h1>
      </LftContainer>
         
         
@@ -138,14 +179,19 @@ render() {
         </Projects>
         <RightSpot>
               <RgtContainer>
+                 
             <button className="arrowBtn" onClick = {this.Decrement}>
                 <img className="rtarrow" src={Rgt} width="50px" height="50px"></img>
             </button>
+             <h1>Next</h1>
      </RgtContainer>
         </RightSpot>
     </HomeContainer>
+
     </Main>
+   </div>
+    
+
     )
  
-}
-}
+}}
