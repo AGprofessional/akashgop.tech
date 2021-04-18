@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 import About from "../About"
-import Resume from "../Resume"
-import Home from "../Home/Home"
+import PG from "../PG"
+import CopyHome from "../Home/CopyHome"
 import meIcon from "../../pictures/meIcon.png"
+import CloseIcon from '@material-ui/icons/Close';
 import "./Navbar.css"
 import {
   BrowserRouter,
@@ -11,22 +12,29 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import { IconButton } from '@material-ui/core'
+import MenuIcon from '@material-ui/icons/Menu';
 import Lights from "./DimLights/Lights" 
+import FooterFull from '../../FooterFull'
+
 
 const NavContainer = styled.nav`
 display:flex;
 flex-direction:row;
 justify-content: space-between;
 width:100vw;
+max-width:100%;
+min-width:383px;
+position:fixed;
+z-index:2;
 padding:0;
 margin:0;
-border: 1px solid transparent;
+border: 1px solid green;
 border-box: 0;
 box-shadow: 0px 3px 30px -6px #000000;
 background: rgb(2,0,36);
 background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(68,224,156,1) 0%, rgba(79,226,140,1) 31%, rgba(0,212,255,1) 100%);
-background: black;
+background: #000080;
 `
 
 
@@ -59,9 +67,11 @@ const LinksContainer = styled(Container)`
 
 display: flex;
 flex-direction:row;
-  justify-content: center;
-  align-items: center;
-padding-right:100px;`
+justify-content: center;
+align-items: center;
+padding-right:100px;
+
+`
 
 const Img = styled.img`  
 height:70px;
@@ -73,9 +83,38 @@ margin:0;
 const SwitchContainer = styled(Container)`
 background: #f8f8ff;
 
-margin-top:70px;
+margin-top:75px;
+margin-bottom:75px;
 `
 
+
+const Footer1 = styled(Container)`
+display:block;
+margin:0;
+padding:0;
+flex-direction:row;
+justify-content:center;
+position:relative;
+bottom:0;
+z-index:2;
+width:100vw;
+min-width:383px;
+max-width:100%;
+background:#000080;
+
+`
+const Footer= styled.div`
+
+position:relative;
+bottom:0;
+z-index:0;
+width:100vw;
+min-width:383px;
+max-width:100%;
+background:#000080;
+margin-top:100px;
+
+`
 const Name = styled.div`
 font-family: 'Poiret One', cursive;
 text-align: center;  
@@ -114,10 +153,17 @@ text-align:center;
 
 
 export default function Navbar() {
+
+    const [open, setOpen] = useState(false);
+
+    const handleClick=()=>{
+        setOpen(!open);
+    }
+
     return (
         <>
          <BrowserRouter>
-        <nav>
+      
             <NavContainer>
             <IconContainer>
                 <a href="https://akashgop.tech/">
@@ -129,42 +175,73 @@ export default function Navbar() {
             <Name>
                 Akash Gopalkrishnan
             </Name>
-            <LinksContainer>
+            <LinksContainer className="LinksContainer">
+                   <LinkItem>
+                       <Link to="/" className="Link"><div>Home</div></Link>
+                    </LinkItem>
+                    <LinkItem>
+                       <Link to="/ProjectGallery" className="Link"><div>Project Gallery</div></Link>
+                    </LinkItem>
+                    
+                     
                   
-                    <LinkItem>
-                       <Link to="/about" className="Link"><div>About</div></Link>
-                    </LinkItem>
-                    <LinkItem>
-                        <Link to="/videogallery" className="Link" ><div>Video Gallery</div> </Link>
-                    </LinkItem>
-                      <LinkItem>
-                       <Link to="/" className="Link"><div>Project Gallery</div></Link>
-                    </LinkItem>
-                   
             </LinksContainer>
+             <div className="hamburger">
+                 
+                       <IconButton onClick = {handleClick}>
+                           
+                           {open? <CloseIcon style={{ color: "white"}} fontSize="large"className="icon"/>: <MenuIcon style={{ color: "white"}} fontSize="large"className="icon"/>}
+                        </IconButton>
+            </div>
             </NavContainer> 
-            
+            {open? <LinksContainer classname="open"/>:<LinksContainer classname="close"/>}
            
            <SwitchContainer>
                  <Switch>
                    
-                  <Route path="/about">
+                 
+                 <Route path="/ProjectGallery">
+                     <PG />
+                 </Route>
+                    <Route path="/other">
+                     
+                     <CopyHome />
+                 </Route>
+                  <Route path="/">
                      <About/>
                  </Route>
-                 <Route path="/videogallery">
-                     <Home />
-                 </Route>
-                    <Route path="/">
-                     <Resume />
-                 </Route>
                  </Switch>
+
+
+ 
             </SwitchContainer>
-            </nav>
+  
+            
             </BrowserRouter>
-     
+   
             
         </>
     )
 }
 
 
+const NavWindow=(props)=>{
+
+
+    return(
+<> <div className={props.classname}>
+
+        
+                            
+                               <ul>
+                                   <li><a href="localhost:3000">Home</a>
+                                       
+                                   </li>
+                                   <li><a href="localhost:3000/ProjectGallery">Project Gallery</a>
+                                       
+                                   </li>
+                                   </ul>
+        </div>
+</>
+    );
+}

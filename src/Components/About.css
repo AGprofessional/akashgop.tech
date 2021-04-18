@@ -1,0 +1,116 @@
+/*.row1 {
+  display: flex;
+  border: 1px solid black;
+  flex-wrap: wrap;
+}
+
+.text {
+  flex: 1;
+  border: 1px solid black;
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.text > div {
+  text-align: left;
+  line-height: 25px;
+}
+.text > p {
+  text-align: left;
+  text-decoration: underline;
+  font-size: 20px;
+}
+
+.image {
+  flex: 2;
+  border: 1px solid black;
+}
+
+.allRows {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  margin: auto;
+  border: 1px solid black;
+  width: 100vw;
+ 
+}
+.wrapper {
+  display: flex;
+  margin: 100px 0;
+  border: 1px solid black;
+}
+*/
+
+.wrapper {
+  display: flex;
+  margin: 100px 0;
+  border: 1px solid black;
+}
+
+.allRows {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  width: 100vw;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+.text {
+  border: 1px solid black;
+  box-sizing: border-box;
+
+  flex: 1;
+}
+
+.image {
+  flex: 3;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.imageContainer {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+.text {
+  flex: 1;
+  border: 1px solid black;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-flow: column;
+  margin: auto;
+  padding: 0 40px;
+}
+
+.text > ul {
+  text-align: left;
+  line-height: 25px;
+}
+.text > p {
+  text-align: left;
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.image1 {
+  object-fit: cover;
+  height: inherit;
+  flex: 1;
+  border: 1px solid black;
+  box-sizing: border-box;
+}
