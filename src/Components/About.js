@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import database from "./firebase";
 import stock from "../pictures/stock.jpg"
 import water from "../pictures/water.jpg"
-
+import main from "../send";
 import "./About.css"
 
 const FlexRowDiv = styled.div`
@@ -73,6 +73,7 @@ useEffect(
 */
 return(
  <>
+ {/*<button className="button" onClick={main}>Azure</button>*/}
  <div className="wrapper">
     <div className="allRows">
         <div className="row">
@@ -147,6 +148,7 @@ image
         </div>        
     </div>
 </div>
+
  </>
  )
 }

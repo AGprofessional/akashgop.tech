@@ -114,3 +114,7 @@
   border: 1px solid black;
   box-sizing: border-box;
 }
+
+button {
+  margin-top: 100px;
+}
