@@ -15,10 +15,10 @@ height:100vh;
 const WrapperDiv  = styled.div`
 
 
-position:relative;
+position:absolute;
 z-index:0;
-top:120px;
-margin-bottom:75px;
+top:90px;
+margin-left:45px;
 
 `
 const CenterDiv=styled.div`
@@ -32,9 +32,11 @@ const H1= styled.h1`
 margin:0;
 padding:0;
 position:relative;
-top:75px;
+top:100px;
 font-size:30px;
-
+margin:auto;
+font-family:Arial;
+color: cornflowerblue;
 `
 const CardDiv = styled.div`
 border:2px solid black;
@@ -71,14 +73,21 @@ useEffect(
 
  return(
  <>
+ <div className="about-parent">
+
+
+{/* 
  <Section>
-<H1>My Projects</H1>
+   <div className="title"><H1>My Projects</H1></div>
+*/}
+
     <WrapperDiv>
+      <div className="about-title">
+  <h1> <span>😃</span>Browse my projects! <span>👇</span></h1>
+</div>
         <CenterDiv>
        <div className={classes.root}>
-      <Grid container spacing={3} direction="row"
-  justify="space-around"
-  alignItems="flex-end">
+      <Grid container spacing={3} direction="row" justify="space-around"  alignItems="flex-end">
         {cards.map((card)=>(<Grid item key={card.title}>
          <MCard2 title={card.title} videoGIF={card.videoGIF} image={card.image} video={card.video}date = {card.date} description={card.description} github={card.github} purpose={card.purpose} techStack={card.techStack} whatItDoes ={card.whatItDoes}></MCard2>
         </Grid>))}
@@ -86,8 +95,7 @@ useEffect(
     </div>
     </CenterDiv>
     </WrapperDiv>
-</Section>
-
+</div>
  </>
  )}
 

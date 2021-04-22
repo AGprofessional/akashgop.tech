@@ -1,62 +1,89 @@
-/*.row1 {
+.parent {
+  margin: auto auto;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 2fr));
+}
+.title {
   display: flex;
-  border: 1px solid black;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: cornflowerblue;
+  padding: 25px 0;
 }
 
-.text {
-  flex: 1;
-  border: 1px solid black;
+.child {
   display: flex;
-  flex-flow: column;
-  margin: auto;
-  padding: 0 40px;
+  justify-content: center;
+  align-items: center;
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  height: 20rem;
+  max-width: 20rem;
+}
+.childlong {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: dodgerblue;
+  color: white;
+  padding: 1rem;
+  height: 20rem;
+  width: 100%;
 }
 
-.text > div {
-  text-align: left;
-  line-height: 25px;
+@media only screen and (max-width: 20rem) {
+  .childlong {
+    background-color: dodgerblue;
+    color: white;
+    padding: 1rem;
+    height: 20rem;
+    width: 100%;
+  }
+  .child {
+    background-color: dodgerblue;
+    color: white;
+    padding: 1rem;
+    height: 20rem;
+    width: 100%;
+  }
 }
-.text > p {
-  text-align: left;
-  text-decoration: underline;
-  font-size: 20px;
+.div1 {
+  background: #12263a;
 }
-
-.image {
-  flex: 2;
+.div2 {
+  background: #a1ef8b;
+}
+.div3 {
+  background: #a1ef8b;
+}
+.div4 {
+  background: #e03616;
+}
+.div5 {
+  background: #e03616;
+}
+.div6 {
+  background: #12263a;
+}
+/*old stuff below*/
+.wrapper {
+  display: flex;
+  margin: 100px 0;
+  padding: 0;
   border: 1px solid black;
 }
 
 .allRows {
+  flex-grow: 1;
   display: flex;
-  flex-flow: column;
+  flex-flow: row;
   flex-wrap: wrap;
-  margin: auto;
-  border: 1px solid black;
-  width: 100vw;
- 
-}
-.wrapper {
-  display: flex;
-  margin: 100px 0;
-  border: 1px solid black;
-}
-*/
-
-.wrapper {
-  display: flex;
-  margin: 100px 0;
-  border: 1px solid black;
-}
-
-.allRows {
-  display: flex;
-  flex-flow: column;
-  flex-wrap: wrap;
-  width: 100vw;
   border: 1px solid black;
   box-sizing: border-box;
+  margin: auto;
 }
 
 .row {
@@ -65,56 +92,37 @@
   flex-wrap: wrap;
   border: 1px solid black;
   box-sizing: border-box;
+  flex-grow: 1;
 }
 
-.text {
-  border: 1px solid black;
-  box-sizing: border-box;
+#row1 {
+  flex-grow: 1;
+}
+#row2 {
+  flex-grow: 1;
+}
+#row3 {
+  flex-grow: 1;
+}
 
+/*test code below-delete after*/
+
+.temp-container {
   flex: 1;
+  border: 1px solid black;
 }
 
-.image {
-  flex: 3;
-  border: 1px solid black;
-  box-sizing: border-box;
-}
-.imageContainer {
-  display: flex;
+#test {
+  flex: 1;
   flex-flow: row;
-  flex-wrap: wrap;
-  border: 1px solid black;
-  box-sizing: border-box;
-}
-.text {
-  flex: 1;
-  border: 1px solid black;
-  box-sizing: border-box;
-
   display: flex;
-  flex-flow: column;
-  margin: auto;
-  padding: 0 40px;
 }
 
-.text > ul {
-  text-align: left;
-  line-height: 25px;
-}
-.text > p {
-  text-align: left;
-  font-size: 20px;
-  text-decoration: underline;
-}
-
-.image1 {
-  object-fit: cover;
-  height: inherit;
+.test-cardcontainer {
   flex: 1;
-  border: 1px solid black;
-  box-sizing: border-box;
 }
 
-button {
-  margin-top: 100px;
+.cloud {
+  height: 20rem;
+  width: 20rem;
 }

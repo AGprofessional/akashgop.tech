@@ -19,6 +19,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 const useStyles = makeStyles({
   root: {
     maxWidth: 300,
+    boxSizing: "borderBox",
     
   },
   media: {

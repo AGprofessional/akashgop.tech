@@ -1,0 +1,26 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+}
+
+.app-navbar {
+  flex: 1;
+}
+
+.app-page {
+  flex: 1;
+  display: block;
+}
+
+.about {
+  margin: 100px;
+}
+.app-footer {
+  flex: 1;
+  margin-top: auto;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
