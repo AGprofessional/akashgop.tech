@@ -26,7 +26,8 @@ function App() {
       <Navbar/>
       </div>
       <div className="app-page">
-   <Switch>
+    
+     <Switch> 
           <Route path="/ProjectGallery">
             <div className="PG">
             <PG/>
@@ -38,7 +39,8 @@ function App() {
            {/*Called 'Home' Link */}      
 </div>
            </Route>   
-   </Switch>
+
+  </Switch>
       </div>
       <div className="app-footer">
       <Footer/>

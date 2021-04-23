@@ -77,7 +77,6 @@
   .hamburger-navFlexDivBar-parent {
     display: flex;
     width: 100%;
-
     position: fixed;
     top: 70px;
     z-index: 999;
@@ -118,4 +117,8 @@
 
     text-decoration-color: whitesmoke;
   }
+}
+
+.active {
+  text-decoration: underline;
 }

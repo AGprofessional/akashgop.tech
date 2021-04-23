@@ -8,7 +8,7 @@ import CloseIcon from '@material-ui/icons/Close';
 import "./Navbar.css"
 import {
 BrowserRouter as Router,
-  Link, Switch, Route
+  NavLink, Link, Switch, Route
 } from "react-router-dom";
 import {IconButton } from '@material-ui/core'
 import MenuIcon from '@material-ui/icons/Menu';
@@ -103,7 +103,7 @@ export default function Navbar() {
 
     return (
         <>
-        <Router>
+        
        <nav className="navbar"> 
             <div className="navbar-left">
                 <div className="avatar">
@@ -121,13 +121,20 @@ export default function Navbar() {
                         <div className="EachLinkBox">
                             
                             {/*<Link to="/" className={`Link1  ${open?"Link1-hamburger":""}`}><div>Home</div></Link>*/}
-                            <Link to="/" className="Link1"><div>Home</div></Link>
+                            <NavLink to="/" 
+              className="Link1"
+              activeClassName="active" 
+              exact><div>Home</div></NavLink>
 
                         </div>
                         <div className="EachLinkBox">
                             
                             {/*<Link to="/ProjectGallery" className={`Link1  ${open?"Link1-hamburger":""}`}><div>Project Gallery</div></Link>*/}
-                              <Link to="/ProjectGallery" className="Link1"><div>Project Gallery</div></Link>
+                             <NavLink 
+              to="/ProjectGallery" 
+              className="Link1"
+              activeClassName="active" 
+              ><div>Project Gallery</div></NavLink>
 
                         </div>
                        
@@ -150,16 +157,16 @@ export default function Navbar() {
                 <div className="hamburger-navFlexDivBar-right">
                 <div className="new-Links-hamburger">
                         <div>
-                            <Link to="/" className="hamburger-link"><div>Home</div></Link>
+                            <NavLink exact to="/" className="hamburger-link"><div>Home</div></NavLink>
                         </div>
                         <div>
-                            <Link to="/ProjectGallery" className="hamburger-link"><div>Project Gallery</div></Link>
+                            <NavLink to="/ProjectGallery" className="hamburger-link"><div>Project Gallery</div></NavLink>
                         </div>
                 </div>
                 </div>
                 </div>:<div style={{display:"none"}}></div>
            };
-     </Router>
+     
         </>
     )
 }

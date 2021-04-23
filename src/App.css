@@ -27,13 +27,13 @@
 .about {
   overflow-x: hidden !important;
   margin: 0 100px;
-  margin-top: 65px;
+  margin-top: 30px;
   margin-bottom: 100px;
 }
-/*fix margin for about section here*/
+/*fix margin for about (ie: home) section here*/
 @media (max-width: 600px) {
   .about {
-    margin-top: 60px;
+    margin-top: 30px;
     margin-left: 0px;
     margin-right: 0px;
     margin-bottom: 90px;
