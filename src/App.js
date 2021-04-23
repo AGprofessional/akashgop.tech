@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Navbar from './Components/Navbar/Navbar';
 import "./App.css"
 import FooterFull from "./FooterFull.js";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch,Link} from 'react-router-dom';
 import CopyHome from './Components/Home/CopyHome';
 import PG from './Components/PG';
 import About from './Components/About';
@@ -26,9 +26,11 @@ function App() {
       <Navbar/>
       </div>
       <div className="app-page">
-      <Switch>
+   <Switch>
           <Route path="/ProjectGallery">
+            <div className="PG">
             <PG/>
+            </div>
           </Route>
           <Route path="/">
             <div className="about">
@@ -36,7 +38,7 @@ function App() {
            {/*Called 'Home' Link */}      
 </div>
            </Route>   
-      </Switch>
+   </Switch>
       </div>
       <div className="app-footer">
       <Footer/>

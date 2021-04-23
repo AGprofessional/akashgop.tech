@@ -6,22 +6,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid red;
   box-shadow: 0px 3px 30px -6px #000000;
   box-sizing: border-box;
   background: cornflowerblue;
   width: 100%;
-  box-sizing: border-box;
 }
+
 .navbar-right {
   display: flex;
-  border: 1px solid blue;
   margin-left: auto;
 }
 
 .navbar-left {
   display: flex;
-  border: 1px solid orangered;
 }
 
 .avatar {
@@ -33,7 +30,6 @@
 }
 
 .Links {
-  border: 1px solid green;
   display: flex;
   align-items: center;
   box-sizing: border-box;
@@ -42,7 +38,6 @@
 
 .Link1 {
   display: flex;
-  border: 1px solid green;
   font-size: 20px;
   line-height: 30px;
   text-decoration: none;
@@ -62,10 +57,13 @@
 }
 
 .hamburger {
-  border: 1px solid green;
   display: flex;
   align-items: center;
   margin-right: 0px;
+  display: none;
+}
+
+.Links-hamburger {
   display: none;
 }
 
@@ -76,126 +74,48 @@
   .Links {
     display: none;
   }
-  .Links-hamburger {
-    height: 100px;
-    width: 100px;
-    display: block;
+  .hamburger-navFlexDivBar-parent {
+    display: flex;
+    width: 100%;
+
     position: fixed;
-    top: 85px;
-    left: 383px;
-    background: cornflowerblue;
+    top: 70px;
     z-index: 999;
   }
-  .Link1-hamburger {
-    color: whitesmoke !important;
+
+  .hamburger-navFlexDivBar-right {
+    margin-left: auto;
+  }
+  .new-Links-hamburger {
+    background: cornflowerblue;
+    color: whitesmoke;
+    border-left: 1px solid whitesmoke;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+    border-right: 1px solid cornflowerblue;
+
+    box-sizing: border-box;
+    display: block;
+    text-align: right;
+    padding: 4px 5px;
+  }
+  .hamburger-link {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    position: relative;
+    text-decoration: none;
+    z-index: 999;
+    color: whitesmoke;
     font-weight: 600;
     box-sizing: border-box;
+    border-bottom: 2px solid whitesmoke;
   }
-  .Link1:hover {
+  .Link1:hover,
+  .hamburger-link:hover {
     cursor: pointer;
     text-decoration: underline;
+
     text-decoration-color: whitesmoke;
   }
-} /*------before------*/
-.navbar-wrapper1 {
-  max-height: 100px;
-}
-.nav-container {
-  display: flex;
-
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100vw;
-  max-width: 100%;
-  min-width: 383px;
-  position: fixed;
-  z-index: 2;
-  padding: 0;
-  margin: 0;
-  border: 1px solid green;
-  box-shadow: 0px 3px 30px -6px #000000;
-  background: rgb(2, 0, 36);
-  background: linear-gradient(
-    90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(68, 224, 156, 1) 0%,
-    rgba(79, 226, 140, 1) 31%,
-    rgba(0, 212, 255, 1) 100%
-  );
-  background: #000080;
-  background: transparent;
-}
-
-.Link {
-  text-decoration: none;
-  border: 2px solid black;
-  text-align: center;
-  padding: 0px;
-  display: inline-block;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 2px;
-  line-height: 30px;
-  text-align: center;
-  font-size: 20px;
-  color: black;
-  cursor: pointer;
-}
-
-.Link div:hover {
-  text-decoration: underline;
-}
-
-#toggle-text {
-  margin-right: 5px;
-}
-
-.hamburger1 {
-  display: none;
-  position: relative;
-  color: white;
-  margin-right: 40px;
-  font-size: 50px;
-  flex: 1;
-}
-
-@media only screen and (max-width: 544px) {
-  .LinkContainer {
-    flex-direction: column;
-  }
-  .hamburger1 {
-    display: inline-block;
-  }
-}
-
-.icon {
-  font-size: 50px;
-  height: 50px;
-}
-.open {
-  position: absolute;
-  top: 100px;
-  z-index: 2;
-  text-align: center;
-  right: 10px;
-  color: white;
-  text-decoration: none;
-}
-
-.open > ul {
-  border: 2px solid black;
-  margin: 0;
-  padding: 0;
-}
-
-.open > ul > li {
-  border-bottom: 1px solid black;
-  list-style-type: none;
-
-  padding: 10px;
-  cursor: pointer;
-}
-
-.close {
-  display: none;
 }

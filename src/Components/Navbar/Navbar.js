@@ -70,11 +70,11 @@ font-family: 'Poiret One', cursive;
 text-align: center;  
 padding: 0px;
 display:flex;
+margin-left:5px;
 align-items:center;
 font-size: 50px;
 font-weight:600;
 color:whitesmoke;
-border: 2px solid black;
  @media (max-width: 1200px) {
     font-size: 40px;}
  @media (max-width: 1000px) {
@@ -115,17 +115,20 @@ export default function Navbar() {
                 </Name>
             </div>
             <div className="navbar-right">
-                <div className={`Links  ${open?"Links-hamburger":""}`}>
-                    
+               {/* <div className={`Links  ${open?"Links-hamburger":""}`}>*/}
+                         <div className="Links">
                         
                         <div className="EachLinkBox">
                             
-                            <Link to="/" className={`Link1  ${open?"Link1-hamburger":""}`}><div>Home</div></Link>
+                            {/*<Link to="/" className={`Link1  ${open?"Link1-hamburger":""}`}><div>Home</div></Link>*/}
+                            <Link to="/" className="Link1"><div>Home</div></Link>
+
                         </div>
                         <div className="EachLinkBox">
                             
-                            <Link to="/ProjectGallery" className={`Link1  ${open?"Link1-hamburger":""}`}><div>Project Gallery</div></Link>
-                        
+                            {/*<Link to="/ProjectGallery" className={`Link1  ${open?"Link1-hamburger":""}`}><div>Project Gallery</div></Link>*/}
+                              <Link to="/ProjectGallery" className="Link1"><div>Project Gallery</div></Link>
+
                         </div>
                        
                     
@@ -134,7 +137,7 @@ export default function Navbar() {
             
             <div className="hamburger"> 
                 <IconButton onClick = {handleClick}>               
-                    {open? <CloseIcon style={{ color: "whitesmoke"}} fontSize="large"className="icon"/>: <MenuIcon style={{ color: "whitesmoke"}} fontSize="large"className="icon"/>}
+                    {open? <><CloseIcon style={{ color: "whitesmoke"}} fontSize="large"className="icon"/></>: <MenuIcon style={{ color: "whitesmoke"}} fontSize="large"className="icon"/>}
                 </IconButton>
             </div>
            {/*{open? <LinksContainer classname="open"/>:<LinksContainer classname="close"/>} */}
@@ -142,11 +145,21 @@ export default function Navbar() {
            </div>
 
            </nav>
-                                              </Router>
-
-
-          
-   
+           {open?
+             <div className="hamburger-navFlexDivBar-parent">
+                <div className="hamburger-navFlexDivBar-right">
+                <div className="new-Links-hamburger">
+                        <div>
+                            <Link to="/" className="hamburger-link"><div>Home</div></Link>
+                        </div>
+                        <div>
+                            <Link to="/ProjectGallery" className="hamburger-link"><div>Project Gallery</div></Link>
+                        </div>
+                </div>
+                </div>
+                </div>:<div style={{display:"none"}}></div>
+           };
+     </Router>
         </>
     )
 }

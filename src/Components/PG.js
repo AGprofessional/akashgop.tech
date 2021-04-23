@@ -18,12 +18,10 @@ const WrapperDiv  = styled.div`
 position:absolute;
 z-index:0;
 top:90px;
-margin-left:45px;
+margin-left:0;
 
 `
-const CenterDiv=styled.div`
 
-`
 const FlexDiv = styled.div`
 display:flex;
 margin:2px;
@@ -73,7 +71,7 @@ useEffect(
 
  return(
  <>
- <div className="about-parent">
+ <div className="PG-parent">
 
 
 {/* 
@@ -82,10 +80,10 @@ useEffect(
 */}
 
     <WrapperDiv>
-      <div className="about-title">
-  <h1> <span>😃</span>Browse my projects! <span>👇</span></h1>
+      <div className="PG-title">
+  <h1 > <span>😃</span>Browse my projects! <span>👇</span></h1>
 </div>
-        <CenterDiv>
+        <div className="centerDiv">
        <div className={classes.root}>
       <Grid container spacing={3} direction="row" justify="space-around"  alignItems="flex-end">
         {cards.map((card)=>(<Grid item key={card.title}>
@@ -93,7 +91,7 @@ useEffect(
         </Grid>))}
       </Grid>
     </div>
-    </CenterDiv>
+    </div>
     </WrapperDiv>
 </div>
  </>

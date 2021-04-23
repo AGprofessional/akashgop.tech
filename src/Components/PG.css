@@ -3,15 +3,57 @@
   justify-content: center;
 }
 
-.about-title {
+.PG-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden !important;
+}
+
+.PG-title {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: Arial, Helvetica, sans-serif;
   color: cornflowerblue;
-  padding: 25px 0;
+  /*padding: 25px 10px;*/
+  padding-bottom: 25px;
+  margin-top: 20px;
 }
 
-.about-parent {
+.flexbox {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/*this is where to style PG margins!! */
+.centerDiv {
+  margin-bottom: 100px;
+  overflow-x: none;
+  margin-left: 37px;
+  margin-right: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .centerDiv {
+    margin-left: 10px;
+    margin-bottom: 100px;
+  }
+  .PG-title {
+    margin-top: 20px;
+    margin-left: 30px;
+  }
+}
+
+@media only screen and (min-width: 1315px) {
+  .centerDiv {
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  .PG-title {
+    margin-top: 100px;
+  }
 }

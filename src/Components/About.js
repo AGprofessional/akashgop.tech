@@ -16,6 +16,12 @@ import GreenCard from './GreenCard';
 import BlueCard from './BlueCard';
 import Typed from 'react-typed';
 
+
+const Flexbox=styled.div`
+display:flex;
+justify-content:center;
+align-items:center;
+`
 export default function About() {
 /*
     const [about, setAbout] = useState([]);
@@ -37,6 +43,8 @@ useEffect(
         }
 
 */
+
+
 return(
  <>
 <div className="title"> 
@@ -48,23 +56,29 @@ return(
 
     <h1>Hi <span>👋</span> My name is Akash.</h1>
 </div>
-<div className="parent">
-    {/*-------------------Row 1-------------------------------------------------*/}
 
+<div className="parent">
+    
+    {/*-------------------Row 1-------------------------------------------------*/}
+<Flexbox>
 <div className="child div1">
     
             <GreenCard/>
 </div>
+</Flexbox>
+
 <div className="childlong div2">
     <div >
                 <img className="cloud" src={row2} alt="cloud, app development"></img>
             </div>
 </div>
-{/*-------------------Row 2-------------------------------------------------*/}
 
+{/*-------------------Row 2-------------------------------------------------*/}
+<Flexbox>
 <div className="child div3">
     <PinkCard/>
 </div>
+</Flexbox>
 <div className="childlong div4">
 <div >
                 <img className="cloud" src={bigData2} alt="cloud, app development"></img>
@@ -72,10 +86,11 @@ return(
 
 </div>
 {/*-------------------Row 3-------------------------------------------------*/}
-
+<Flexbox>
 <div className="child div5">
     <BlueCard/>
 </div>
+</Flexbox>
 <div className="childlong div6">
 <div >
                 <img className="cloud" src={pm} alt="cloud, app development"></img>
@@ -83,8 +98,9 @@ return(
 
 </div>
 
-</div>
  
+</div>
+
  </>
  )
 }

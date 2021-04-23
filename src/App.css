@@ -3,6 +3,8 @@
   flex-direction: column;
   justify-content: space-between;
   overflow-wrap: break-word;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
 }
 
 .app-navbar {
@@ -14,8 +16,28 @@
   display: block;
 }
 
+/*fix margin for about section here*/
+
+.PG {
+  overflow-x: hidden !important;
+}
+
+/*fix margin for about section here*/
+
 .about {
-  margin: 100px;
+  overflow-x: hidden !important;
+  margin: 0 100px;
+  margin-top: 65px;
+  margin-bottom: 100px;
+}
+/*fix margin for about section here*/
+@media (max-width: 600px) {
+  .about {
+    margin-top: 60px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 90px;
+  }
 }
 .app-footer {
   flex: 1;
